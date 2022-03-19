@@ -1,0 +1,15 @@
+{
+  "name": "oraclesig",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@bitauth/libauth": "^1.19.1",
+    "crypto": "^1.0.1"
+  }
+}
