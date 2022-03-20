@@ -2,10 +2,10 @@
 
 Javascript program for nodeJS to generate oracle keypair and sign an oracle message!
 
-to install [libauth](https://libauth.org/) dependency run
+To install [libauth](https://libauth.org/) dependency run
  ```npm i``` 
 
-to run the program run
-```node generateSig.js```
+To generate the oracle messages run
+```node oracleMessage.js```
 
-change the blockheight & price constants to sign a different oracle message!
+Change the blockheight & price constants to sign a different oracle message!
