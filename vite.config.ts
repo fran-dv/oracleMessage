@@ -9,5 +9,16 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  esbuild: {
+    target: "esnext",
+  },
+  optimizeDeps: {
+    esbuildOptions: {
+      target: "esnext",
+    },
+  },
+  build: {
+    target: "esnext",
+  },
   plugins: [react()],
 });
