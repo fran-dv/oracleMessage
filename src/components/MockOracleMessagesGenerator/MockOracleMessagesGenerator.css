@@ -1,0 +1,83 @@
+.oracle-message-generator {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 4rem;
+  background-color: var(--primary-color);
+  border-radius: 2rem;
+  gap: 1rem;
+  align-items: stretch;
+  max-width: 60%;
+
+  @media (width <= 1300px) {
+    max-width: 90%;
+    padding: 1rem 2rem;
+  }
+  @media (width <= 1000px) {
+    max-width: 100%;
+  }
+}
+
+.oracle-message-generator h1,
+.oracle-message-generator h2,
+.oracle-message-generator p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: var(--on-primary-color);
+  font-size: 1rem;
+}
+
+.oracle-message-generator h1 {
+  font-size: 2rem;
+  line-height: 2;
+  padding: 0.25rem 0;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+  align-self: center;
+  text-decoration: underline solid 2px var(--background-color);
+}
+
+.message-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.message-data h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.data-section {
+  min-height: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  width: 90%;
+}
+
+.data-section h2 {
+  align-self: flex-start;
+}
+
+.data-section p {
+  font-size: 1.5rem;
+  font-weight: 400;
+  word-break: break-all;
+  overflow-wrap: break-word;
+  padding: 0 1rem;
+}
+
+.generate-btn {
+  padding: 1rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: var(--accent-color);
+  margin-top: auto;
+  cursor: pointer;
+  margin: 0.5rem 0;
+}
+
+.generate-btn p {
+  color: var(--on-accent-color);
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
