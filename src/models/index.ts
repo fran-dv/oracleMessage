@@ -1,1 +1,1 @@
-export * from "./OracleData"
+export * from "./OracleData";
