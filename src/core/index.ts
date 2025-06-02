@@ -1,1 +1,1 @@
-export * from "./generateMockOracleMessage"
+export * from "./generateMockOracleMessage";

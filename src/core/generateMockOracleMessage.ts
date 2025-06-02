@@ -4,8 +4,8 @@ import {
   instantiateSecp256k1,
   generatePrivateKey,
   instantiateSha256,
+  generateRandomBytes,
 } from "@bitauth/libauth";
-import { generateRandomBytes } from "@bitauth/libauth";
 import type { MockOracleMessageData } from "@/models";
 
 const intToHex = (int: number) => {
@@ -26,14 +26,14 @@ interface MessageSignature {
 }
 
 const signMessage = async (
-  message: Uint8Array<ArrayBufferLike>
+  message: Uint8Array<ArrayBufferLike>,
 ): Promise<MessageSignature> => {
   const secp256k1 = await instantiateSecp256k1();
   const sha256 = await instantiateSha256();
 
   const privKey = generatePrivateKey(() => generateRandomBytes(32));
   const pubKey = binToHex(
-    secp256k1.derivePublicKeyCompressed(privKey) as Uint8Array<ArrayBufferLike>
+    secp256k1.derivePublicKeyCompressed(privKey) as Uint8Array<ArrayBufferLike>,
   );
 
   // Hash the message.
@@ -42,8 +42,8 @@ const signMessage = async (
   const signature = binToHex(
     secp256k1.signMessageHashSchnorr(
       privKey,
-      messageHash
-    ) as Uint8Array<ArrayBufferLike>
+      messageHash,
+    ) as Uint8Array<ArrayBufferLike>,
   );
 
   return {
@@ -57,8 +57,10 @@ const signMessage = async (
 export const generateMockOracleMessage = async (): Promise<
   MockOracleMessageData | Error
 > => {
-  const blockHeight = 1650000;
-  const price = 350;
+  const blockHeight = Math.floor(
+    Math.random() * (165000 - 150000 + 1) + 150000,
+  );
+  const price = Math.floor(Math.random() * (400 - 300 + 1) + 300);
 
   const messageHex = intToHex(blockHeight) + intToHex(price);
   const messageBinary = hexToBin(messageHex);
